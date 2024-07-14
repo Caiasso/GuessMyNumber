@@ -8,7 +8,7 @@ let winner = false;
 document.querySelector('.check').addEventListener('click', function() {
     const guess = Number(document.querySelector(`.guess`).value);
 
-    if(score > 1 && !winner && guess < 21)
+    if(score > 0 && !winner && guess < 21)
     {
         if(!guess)
         {
