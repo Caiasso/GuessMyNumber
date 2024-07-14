@@ -11,17 +11,17 @@ const displayMessage = function (message) {
   document.querySelector(`.message`).textContent = message;
 };
 
-const changeScore = function () {
-  document.querySelector(`.score`).textContent = score;
-};
-
-const generateSecretNumber = function () {
-  secretNumber = Math.trunc(Math.random() * 20) + 1;
-};
-
 const backgroundColor = function (color) {
   document.querySelector(`body`).style.backgroundColor = color;
 };
+
+function changeScore() {
+  document.querySelector(`.score`).textContent = score;
+}
+
+function generateSecretNumber() {
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+}
 
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector(`.guess`).value);
@@ -55,7 +55,7 @@ document.querySelector(`.again`).addEventListener(`click`, function () {
     winner = false;
   }
   score = 20;
-  generateSecretNumber;
+  generateSecretNumber();
   changeScore();
   displayMessage(`Start guessing...`);
   document.querySelector(`.number`).textContent = '?';
