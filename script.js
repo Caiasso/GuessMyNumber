@@ -44,8 +44,12 @@ document.querySelector('.check').addEventListener('click', function() {
 })
 
 document.querySelector(`.again`).addEventListener(`click`, function(){
-    winner = false;
-    highscore = score > Number(document.querySelector(`.highscore`).textContent) ? score : highscore;
+    
+    if(winner)
+    {
+        highscore = score > Number(document.querySelector(`.highscore`).textContent) ? score : highscore;
+        winner = false;
+    }
     score = 20;
     secretNumber = Math.trunc(Math.random() * 20) + 1;
     document.querySelector(`.score`).textContent = score;
